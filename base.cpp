@@ -99,7 +99,6 @@ public:
         }
     };
 
-    
 
     class ConstReverseIterator:public ConstBaseIterator {
     public:
