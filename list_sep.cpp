@@ -76,7 +76,7 @@ class List
 //	}
 
 	template<typename T>
-	ConstBaseIterator<T>::ConstBaseIterator(Element* Temp) :Temp(Temp)
+	List<T>::ConstBaseIterator(Element* Temp) :Temp(Temp)
 	{
 #ifdef DEBUG
 		cout << "BItConstructor:\t" << this << endl;
@@ -84,7 +84,7 @@ class List
 	}
 
 	template<typename T>
-	ConstBaseIterator<T>::~ConstBaseIterator()
+	List<T>::~ConstBaseIterator()
 	{
 #ifdef DEBUG
 		cout << "BItDestructor:\t" << this << endl;
@@ -133,7 +133,7 @@ public:
 	};
 
 	template<typename T>
-	ConstBaseIterator<T>::ConstIterator<T>::ConstIterator(Element* Temp = nullptr) :ConstBaseIterator<T>(Temp)
+	List<T>::ConstIterator<T>::ConstIterator(Element* Temp = nullptr) :ConstBaseIterator<T>(Temp)
 	{
 #ifdef DEBUG
 		cout << "ItConstructor:\t" << this << endl;
@@ -142,7 +142,7 @@ public:
 
 
 	template<typename T>
-	ConstBaseIterator<T>::ConstIterator<T>::~ConstIterator()
+	List<T>::ConstIterator<T>::~ConstIterator()
 	{
 #ifdef DEBUG
 		cout << "ItDestructor:\t" << this << endl;
@@ -183,14 +183,14 @@ public:
 	};
 
 	template<typename T>
-	ConstReverseIterator<T>::ConstReverseIterator(Element* Temp = nullptr) :ConstBaseIterator(Temp)
+	List<T>::ConstReverseIterator(Element* Temp = nullptr) :ConstBaseIterator(Temp)
 	{
 #ifdef DEBUG
 		cout << "RItConstructor:\t" << this << endl;
 #endif // DEBUG
 	}
 	template<typename T>
-	ConstReverseIterator<T>::~ConstReverseIterator()
+	List<T>::~ConstReverseIterator()
 	{
 #ifdef DEBUG
 		cout << "RItDestructor:\t" << this << endl;
@@ -209,10 +209,10 @@ public:
 	};
 
 	template<typename T>
-	ConstIterator<T>::Iterator(Element* Temp = nullptr) :ConstIterator(Temp) {}
+	List<T>::Iterator(Element* Temp = nullptr) :ConstIterator(Temp) {}
 
 	template<typename T>
-	ConstIterator<T>::T& operator*()
+	List<T>::T& operator*()
 	{
 		return ConstBaseIterator::Temp->Data;
 	}
